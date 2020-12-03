@@ -31,9 +31,10 @@ La razón de esta aparente paradoja es que, mientras que los píxeles suelen ser
 # Dependencia espacial
 
 ## Rejillas y Lattices
-
 <div style="text-align: justify">
+Una imagen (en el sentido de una imagen generada por computadora) es un caso especial de una celosía, en el sentido de que es un objeto aleatorio cuyos elementos están indexados por la ubicación de los píxeles y, por lo tanto, están relacionados por la proximidad geográfica de esas ubicaciones. 
 
+En general, una celosía es un objeto matemático multidimensional en el que se puede definir una relación de vecindad.
 
 <div>
 
