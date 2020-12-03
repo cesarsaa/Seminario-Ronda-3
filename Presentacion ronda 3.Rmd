@@ -1,7 +1,7 @@
 ---
-title: "Redes neuronales"
+title: "Análisis de Imágenes"
 author: "Angie Rodríguez Duque & César Saavedra Vanegas"
-date: "Noviembre 06 de 2020"
+date: "Diciembre 04 de 2020"
 output:
   ioslides_presentation:
     widescreen: yes
@@ -13,21 +13,18 @@ output:
 ## Introducción
 <div style="text-align: justify">
 
-Una de las ramas más importantes del Machine Learning y la Inteligencia Artificial son las redes neuronales. Las redes neuronales (neural networks) son una representación abstracta del comportamiento de una red neuronal biológica. Su contexto se remonta a 1943, año en el cual McCulloch y Pitts proponen el primer modelo neuronal, dicho modelo era un modelo binario, en el cual cada neurona tenía un escalón o umbral prefijado. De esta manera sirvió de base para los modelos posteriores.
+
 
 <center>
 ![](4.gif "Red neuronal"){width=500px}
 <div>
 
-## Conceptos
+#
+### El análisis de imágenes como problema estadístico
 
 <div style="text-align: justify">
 
-**Neurona biológica:** Es una célula del sistema nervioso central que posee la capacidad de recibir y decodificar información en forma de señales eléctricas y químicas, transmitiéndolas a otras células.
 
-**Neurona artificial:** Es la unidad básica de una red neuronal, tratan de imitar el funcionamiento de las neuronas de los organismos vivos.
-
-**Red Neuronal:** Son un modelo inspirado en el comportamiento biológico. Consiste en un conjunto de neuronas artificiales, conectadas entre sí para transmitir señales.
 
 <div class="columns-2">
 Sus partes son:
@@ -44,122 +41,28 @@ Sus partes son:
 ![](red2.gif "Red neuronal"){height=250px}
 <div class="columns-2">
 
-## Redes neuronales
+# Dependencia espacial
+
+#
+### Rejillas y Lattices
 
 <div style="text-align: justify">
-
-De acuerdo a su estructura las redes neuronales se clasifican en:
-
-+ **Redes monocapa:** Compuestas por una única capa de neuronas.
-
-- **Redes multicapa:** Las neuronas se organizan en varias capas.
-
 
 <center>
 ![](simple_profunda.png "Red neuronal"){height=250px}
 
-## Estructura
+#
+### Modelo de Ising
 
 <center>
 ![](1.png "Red neuronal"){height=400px}
-
-## Capas
-<div style="text-align: justify">
-Las redes neuronales están compuestas por capas de neuronas que se comunican entre si y es posible dividirlas de la siguiente manera:
-
-<div class="columns-2">
-
-- **Capa de entrada:** Contiene todas nuestras entradas o datos de entrenamiento, estos contarán con pesos que permitirán expresar su importancia.
-
-- **Capa oculta:** Puede estar conformada a su vez por una o varias capas, el número de capas dependerá de qué tan sofisticado queremos nuestro modelo. Sin embargo, es necesario recalcar que mientras más capas se tengan necesitaremos más recursos como tiempo y poder computacional.
-
-- **Capa de salida:** Se encarga de entregar los resultados, puede contar con una o varias neuronas, dependerá del número de características que se desean llegar a encontrar.
-
-<div>
-
-<center>
-![Capas en redes neuronales](3.png "Red neuronal"){width=400px}
-<div class="columns-2">
-
-## Entradas, pesos, suma ponderada y salida
-
-<div class="columns-2">
+#
+### El modelo de Potts
 
 <div style="text-align: justify">
 
-+ **Entradas $(x_{j})$:** Las entradas reciben los datos de otras neuronas.
-
-- **Pesos sinápticos $(w_{ij})$:** Se hace una asignación de pesos pequeños generados de forma aleatoria, en un rango de valores entre $-0.5$ y $0.5$ o algo similar.
-
-+ **Función base:** Es una función que corresponde a una combinación lineal del conjunto de entradas y los pesos sinápticos. Es decir:
-
-$$u_{i}(w,x)=\sum_{j=1}^{n}w_{ij}x_{j}$$
-
-$i=1,...,m$ $j=1,...,n$
-
-
-<center>
-
-![](gif1.gif "Red neuronal"){height=280px}
-
-<center>
-
-<div>
-
-<div class="columns-2">
-
-## Sesgo "Bias" $(b, w_{0})$
-
-<div class="columns-2">
-
-<div style="text-align: justify">
-
-Ayuda a mover la línea que divide los datos de cada neurona, si el valor de $b$ es cero, la línea pasa por el origen, dependiendo del número que tenga este parámetro es por donde pasará la línea que divide a los datos.
-
-$$u_{i}(w,x)=\sum_{j=1}^{n}w_{ij}x_{j} \longrightarrow z=b+\sum_{j=1}^{n}w_{ij}x_{j} $$
-
-<center>
-
-![](gif_sesgo.gif "Red neuronal"){height=250px}
-
-<div class="columns-2">
-
-## Función de activación $\sigma(z)$
-<div style="text-align: justify">
-
-<center>
-![](gif_activacion.gif "Red neuronal"){height=400px}
-
-## Función de activación $\sigma(z)$
-<div style="text-align: justify">
-
-**Nota:** Se debe considerar que en la red neuronal se usará una función no lineal debido a que le permite al modelo adaptarse para trabajar con la mayor cantidad de datos.
-
-Las funciones de activación se dividen en dos tipos como: lineal y no lineal
-
-<div class="columns-2">
-
-+ **Función lineal**
-
-- **Funciones no lineales:**
-
-    + Sigmoide
-    
-    - Umbral
-    
-    + Tangente hiperbólica
-    
-    - ReLu
-    
-    + Softmax
-    
-
-<center>
-![](funciones.jpg "Regresión local"){width=400px}
-
-<div class="columns-2">
-
-<div>
+#
+### Segmentación de imágenes
 
 # Aprendizaje automático
 
@@ -175,11 +78,6 @@ Se trata de un proceso iterativo de “ir y venir” por las capas de neuronas.
 
 + **Backpropagation:** Partiendo de la capa de salida, esa información de loss se propaga hacia todas las neuronas de la capa oculta que contribuyen directamente a la salida. Sin embargo las neuronas de la capa oculta solo reciben una fracción de la señal total de la loss, basándose aproximadamente en la contribución relativa que haya aportado cada neurona a la salida original.
 
-## **Aprendizaje automático**
-
-<center>
-
-![](back.png "Red neuronal"){height=400px}
 
 # Algunos problemas en el entrenamiento de las redes neuronales
 
@@ -214,186 +112,6 @@ $$\tilde{x}_{i}=\displaystyle{\frac{(x_{i}-\bar{x}_{i})}{sd}}$$
 <div class="columns-2">
 
 <div/>
-
-# Aplicaciones
-##
-<div style="text-align: justify">
-
-La mayoría de las aplicaciones de las redes neuronales consisten en:
-
-**Finanzas:** Previsión de la evolución de los precios, Valoración del riesgo de los créditos, Identificación de falsificaciones, Interpretación de firmas. 
-
-**Manufacturación:** Robots automatizados y sistemas de control (visión artificial y sensores de presión, temperatura, gas, etc.), Inspección de la calidad. 
-
-**Militares:** Clasificación de las señales de radar y Reconocimiento y seguimiento en el tiro al blanco. 
-
-**Medicina:** Clasificación de imágenes para detectar células cancerígenas. 
-
-**Medio ambiente:** Analizar tendencias y patrones.
-
-<div/>
-
-# Ejemplo de aplicación
-
-<div style="text-align: justify">
-
-## **Datos**
-
-Se hará uso del conjunto de datos denominado: "Boston" perteneciente al paquete MASS. El conjunto de datos de Boston es una colección de datos sobre el valor de las viviendas en los suburbios de Boston. Nuestro objetivo es predecir el valor medio de las viviendas ocupadas por sus propietarios (medv) utilizando todas las demás variables continuas disponibles.
-
-```{r warning=FALSE, include=T, paged.print=TRUE}
-set.seed(500)
-suppressMessages(library(MASS))
-suppressMessages(library(neuralnet))
-data <- Boston # Este set de datos pertenece 
-               # a la librerías MASS, es un conjunto de datos de pruebas que ésta posee
-```
-
-```{r warning=FALSE, include=T, paged.print=F}
-index <- sample(1:nrow(data),round(0.75*nrow(data)))# se toma una muestra aleatoria
-train <- data[index,] # función de entrenamiento
-test <- data[-index,] # función de prueba
-lm.fit <- glm(medv~., data=train)
-pr.lm <- predict(lm.fit,test)
-MSE.lm <- sum((pr.lm - test$medv)^2)/nrow(test)
-```
-
-##
-
-```{r warning=FALSE, include=T, paged.print=F}
-summary(lm.fit)
-
-```
-
-## **Adaptación de la red neuronal**
-
-Antes de instalar una red neuronal, es necesario realizar algunos preparativos. Como primer paso, se aborda el preprocesamiento de datos. Aquí se normalizan los datos antes de entrenar la red neuronal.
-
-Se elige el método min-max y se escalan los datos en el intervalo [0,1]. Normalmente, el escalado en los intervalos [0,1] o [-1,1] tiende a dar mejores resultados. Por lo tanto, escalamos y dividimos los datos antes de continuar:
-
-
-```{r warning=FALSE, include=T, paged.print=TRUE}
-maxs <- apply(data, 2, max) #valores máximos para el entrenamiento
-mins <- apply(data, 2, min) #valores mínimos para el entrenamiento
-scaled <- as.data.frame(scale(data, center = mins, scale = maxs - mins))
-train_ <- scaled[index,]
-test_ <- scaled[-index,]
-```
-
-+ **Nota:** Tener en cuenta que *scale* devuelve una matriz que necesita ser convertida en un data.frame.
-
-## **Adaptación de la red neuronal**
-
-
-
-<center>
-
-![](normalizacion.png "Red neuronal"){height=320px}
-
-## **Parámetros**
-
-<div style="text-align: justify">
-
-En esta ocasión, vamos a utilizar 2 capas ocultas con esta configuración: 
-
-$$13: 5: 3: 1$$
-
-La capa de entrada tiene 13 entradas, las dos capas ocultas tienen 5 y 3 neuronas y la capa de salida tiene, por supuesto, una única salida ya que estamos haciendo regresión.
-
-```{r warning=FALSE, include=T, paged.print=TRUE}
-n <- names(train_)
-f <- as.formula(paste("medv ~", paste(n[!n %in% "medv"], collapse = " + ")))
-nn <- neuralnet(f,data=train_,hidden=c(5,3),linear.output=T)
-# Red neuronal
-plot(nn)
-```
-
-<div/>
-
-## **Representación gráfica**
-
-<div style="text-align: justify">
-
-El paquete neuralnet proporciona una buena herramienta para trazar el modelo. Esta es la representación gráfica del modelo con los pesos en cada conexión:
-
-<center>
-![Modelo red neuronal](5.png "Red neuronal"){width=900px}
-
-<div/>
-
-
-## 
-
-### **Observaciones**
-
-<div style="text-align: justify">
-
-+ Las líneas negras muestran las conexiones entre cada capa y los pesos en cada conexión.
-
-+ Las líneas azules muestran el término de sesgo agregado en cada paso.
-
-+ El sesgo se puede pensar como la intersección de un modelo lineal.
-
-+ Finalmente, el algoritmo de entrenamiento ha convergido y, por lo tanto, el modelo está listo para ser utilizado.
-
-<div/>
-
-## 
-
-### **Predicción "medv" usando la red neuronal**
-
-<div style="text-align: justify">
-
-Ahora es posible predecir los valores para el conjunto de prueba y calcular el MSE.
-
-<div/>
-
-```{r warning=FALSE, include=T, paged.print=TRUE}
-pr.nn <- compute(nn,test_[,1:13])
-
-pr.nn_ <- pr.nn$net.result*(max(data$medv)-min(data$medv))+min(data$medv)
-test.r <- (test_$medv)*(max(data$medv)-min(data$medv))+min(data$medv)
-
-MSE.nn <- sum((test.r - pr.nn_)^2)/nrow(test_)
-```
-
-Se comparan los dos MSE para el modelo estimado de forma tradicional y por mediante la red neuronal:
-
-```{r warning=FALSE, include=T, paged.print=TRUE}
-print(paste(MSE.lm,MSE.nn))
-```
-
-Los resultados muestran que la red neuronal está realizando una mejor predicción para los "medv" que el modelo lineal.
-
-##
-### **Rendimiento de la Red neuronal vs. Modelo lineal**
-
-<div style="text-align: justify">
-
-A continuación se muestra un primer enfoque visual del rendimiento de la red y el modelo lineal en el conjunto de prueba.
-
-<center>
-![Real vs. predicción](salida1.png "Red neuronal"){width=500px}
-<center>
-
-<div style="text-align: justify">
-
-A partir de la figura anterior es posible evidenciar que las predicciones hechas por la red neuronal están (en general) más concentradas alrededor de la línea (una alineación perfecta con la línea indicaría un MSE de 0 y, por lo tanto, una predicción perfecta ideal) que las realizadas por el modelo lineal.
-
-<div>
-
-
-##
-### **Rendimiento de la Red neuronal vs. Modelo lineal**
-
-<div style="text-align: justify">
-
-A continuación se muestra una comparación visual más útil:
-
-<center>
-![Red neuronal real vs. predicción](salida2.png "Red neuronal"){width=500px}
-
-<div>
 
 ## Bibliografía
 
