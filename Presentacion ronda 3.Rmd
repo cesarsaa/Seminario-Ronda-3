@@ -19,7 +19,7 @@ output:
 ![](4.gif "Red neuronal"){width=500px}
 <div>
 
-#
+##
 ### El análisis de imágenes como problema estadístico
 
 <div style="text-align: justify">
@@ -43,25 +43,22 @@ Sus partes son:
 
 # Dependencia espacial
 
-#
-### Rejillas y Lattices
+## Rejillas y Lattices
 
 <div style="text-align: justify">
 
 <center>
 ![](simple_profunda.png "Red neuronal"){height=250px}
 
-#
-### Modelo de Ising
+## Modelo de Ising
 
 <center>
 ![](1.png "Red neuronal"){height=400px}
-#
-### El modelo de Potts
+
+## El modelo de Potts
 
 <div style="text-align: justify">
 
-#
 ### Segmentación de imágenes
 
 # Aprendizaje automático
