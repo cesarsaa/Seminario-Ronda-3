@@ -13,33 +13,20 @@ output:
 ## Introducción
 <div style="text-align: justify">
 
-
-
 <center>
 ![](4.gif "Red neuronal"){width=500px}
 <div>
 
 ##
-### El análisis de imágenes como problema estadístico
+### **El análisis de imágenes como problema estadístico**
 
 <div style="text-align: justify">
 
+El análisis de imágenes visto como un análisis estadístico es un campo próspero que vió el surgimiento de varios avances estadísticos importantes, incluido, por ejemplo: **El muestreador de Gibbs**. Además, este campo ha adoptado predominantemente una **perspectiva bayesiana** tanto porque esto era algo natural de hacer como porque el poder analítico de este enfoque era mayor que con otros métodos. 
 
+La razón de esta aparente paradoja es que, mientras que los píxeles suelen ser deterministas objetos, la complejidad y el tamaño de las imágenes requieren que uno represente esos píxeles como la salida aleatoria de una distribución gobernada por un objeto de dimensión mucho más pequeña. Por ejemplo, este es el caso de la visión por computadora, donde los objetos específicos deben extraerse de un fondo mucho más rico (o más ruidoso).
 
-<div class="columns-2">
-Sus partes son:
-
-+ **Dendritas:** Constituyen el canal de entrada de la información.
-
-- **Sinapsis:** Conexión entre neuronas.
-
-+ **Cuerpo celular (Soma):** Es el órgano de cómputo.
-
-- **Axón:** Corresponde al canal de salida.
-
-<center>
-![](red2.gif "Red neuronal"){height=250px}
-<div class="columns-2">
+<div>
 
 # Dependencia espacial
 
@@ -47,76 +34,62 @@ Sus partes son:
 
 <div style="text-align: justify">
 
-<center>
-![](simple_profunda.png "Red neuronal"){height=250px}
+
+<div>
 
 ## Modelo de Ising
 
-<center>
-![](1.png "Red neuronal"){height=400px}
+<div style="text-align: justify">
+
+
+<div>
 
 ## El modelo de Potts
 
 <div style="text-align: justify">
 
-### Segmentación de imágenes
+$$n_{i,g}=$$
 
-# Aprendizaje automático
+<div>
 
-
-## **¿Cómo entrenar una red neuronal?**
-<div style="text-align: justify">
-
-Se trata de un proceso iterativo de “ir y venir” por las capas de neuronas.
-
-+ **Forwardpropagation:** Se expone la red a los datos de entrenamiento y estos cruzan toda la red neuronal para ser calculadas sus predicciones (labels). Es decir, pasar los datos de entrada a través de la red de tal manera que todas las neuronas apliquen su transformación a la información que reciben de las neuronas de la capa anterior y la envíen a las neuronas de la capa siguiente. Cuando los datos hayan cruzado todas las capas, y todas sus neuronas han realizado sus cálculos, se llegará a la capa final con un resultado de predicción de la label para aquellos ejemplos de entrada. 
-
-- **Función de Loss:** Se usa para estimar el error, para comparar y medir qué tan bueno/malo fue el resultado de la predicción en relación con el resultado correcto. Idealmente, queremos que nuestro coste sea cero, es decir, sin divergencia entre valor estimado y el esperado. Por eso a medida que se entrena el modelo se irán ajustando los pesos de las interconexiones de las neuronas de manera automática hasta obtener buenas predicciones.
-
-+ **Backpropagation:** Partiendo de la capa de salida, esa información de loss se propaga hacia todas las neuronas de la capa oculta que contribuyen directamente a la salida. Sin embargo las neuronas de la capa oculta solo reciben una fracción de la señal total de la loss, basándose aproximadamente en la contribución relativa que haya aportado cada neurona a la salida original.
-
-
-# Algunos problemas en el entrenamiento de las redes neuronales
-
-##
-
-<div class="columns-2">
+## Segmentación de imágenes
 
 <div style="text-align: justify">
 
-+ **Valores iniciales:** Se hace referencia a los valores que los pesos iniciales pueden tomar. Así, es recomendable llevar acabo una asignación de pesos pequeños generados de forma aleatoria.
+Esta estructura subyacente de los píxeles "verdaderos" se denota por $x$, mientras que la imagen observada se denota por $y$. Ambos objetos $x$ e $y$ son matrices, con cada entrada de $x$ tomando un número finito de valores y cada entrada de $y$ tomando valores reales. Por lo tanto, estamos interesados en la distribución posterior de $x$ dada $y$ proporcionada por el teorema de Bayes:
 
-$$w_{ij} \in (-0.5,0.5)$$
+$$\pi(x|y)\varpropto f(y|x)\pi(x)$$
 
-+ **Sobreajuste:** También denominado "overfitting", se produce cuando un sistema de aprendizaje automático se entrena demasiado o con datos anómalos, que hace que el algoritmo aprenda patrones que no son generales.
+En esta distribución posterior:
 
-<center>
++ $f(y|x)$: La verosimilitud describe el vínculo entre la imagen observada y la clasificación subyacente; es decir, da la distribución del ruido.
 
-![](overfitting.png "Red neuronal"){height=180px}
-<center>
+- $\pi(x)$: La apriori codifica creencias sobre las propiedades (posibles o deseadas) de la imagen subyacente.
+
+<div>
+
+## Aplicaciones
 
 <div style="text-align: justify">
 
-+ **Escalado de las entradas:** Es preferible estandarizar todas las entradas para que tengan una media de cero y una desviación estándar de uno.
++ **Medicina**
 
-$$\tilde{x}_{i}=\displaystyle{\frac{(x_{i}-\bar{x}_{i})}{sd}}$$
 
-+ **Número de capas y unidades ocultas:** El número de unidades ocultas está directamente relacionado con las capacidades de la red. En general, es mejor tener demasiadas unidades ocultas que muy pocas.
 
 <center>
-![](simple_profunda.png "Red neuronal"){width=450px}
+![](medical.jpeg "Red neuronal"){height=200px}
 
-<div class="columns-2">
-
-<div/>
+<div>
 
 ## Bibliografía
 
 <div style="text-align: justify">
 
-+ Hastie, T., Tibshirani, R., & Friedman, J. (2009). The elements of statistical learning: data mining, inference, and prediction. Springer Science & Business Media.
++ Marin, J. M., & Robert, C. (2007). Bayesian core: a practical approach to computational Bayesian statistics. Springer Science & Business Media.
 
-- Efron, B., & Hastie, T. (2016). Computer age statistical inference (Vol. 5). Cambridge University Press.
+- Marin, J. M., & Robert, C. P. (2014). Bayesian essentials with R (Vol. 48). New York: Springer.
+
++ Mendoza, F., & Lu, R. (2015). Basics of image analysis. In Hyperspectral imaging technology in food and agriculture (pp. 9-56). Springer, New York, NY.
 
 
 <div>
