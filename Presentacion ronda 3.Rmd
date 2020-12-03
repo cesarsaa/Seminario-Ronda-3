@@ -42,6 +42,36 @@ En general, una celosía es un objeto matemático multidimensional en el que se 
 
 <div style="text-align: justify">
 
+Si los píxeles de la imagen $x$ bajo estudio sólo pueden tomar dos colores (blanco y negro), entonces $x$ es binario.De esta manera, nos referimos a cada pixel $x_{i}$ como:
+
++ **Primer plano:** Si $x_{i}=1$ (Negro)
+
+- **Fondo:** $x_{i}=0$ (Blanco)
+
+Además, la distribución condicional de un pixel es Bernoulli con el parámetro de probabilidad correspondiente dependiendo de los otros píxeles. Un paso de simplificación es asumir que es una función del número de píxeles vecinos negros, utilizando, por ejemplo, un enlace logit como $(j=0,1)$
+
+$$\pi(x_{i}=j|x_{-i})\varpropto exp(\beta n_{i,j}), \hspace{2cm} \beta >0$$
+
+Donde:
+
+$n_{i,j}=\sum_{\ell \in n(i)}:$ Es el número de vecinos de $x_{i}$ con color j
+
+<div>
+
+## Modelo de Ising
+
+<div style="text-align: justify">
+
+El modelo de Ising se define a través de los siguientes condicionales:
+
+
+$$\pi(x_{i}=1|x_{-i})=\displaystyle{\frac{exp(\beta n_{i,1})}{exp(\beta n_{i,0})+exp(\beta n_{i,1})}}$$
+
+y la distribución conjunta por tanto satisface:
+
+$$\pi(x)\varpropto exp\left(\beta \sum_{j\sim i} I_{x_{j}=x_{i}}\right)$$
+
+Donde la suma se toma sobre todos los pares $(i,j)$ de vecinos.
 
 <div>
 
