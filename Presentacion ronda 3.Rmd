@@ -13,8 +13,33 @@ output:
 ## Introducción
 <div style="text-align: justify">
 
-<center>
-![](4.gif "Red neuronal"){width=500px}
+
+El análisis de imágenes es el proceso de segmentación de imágenes en diferentes categorías en función de su fe a ras. Una característica podría ser:
+
++ Los bordes de una imagen
+
+- La intensidad de los píxeles
+
++ El cambio en los valores de los píxeles
+
+- etc. 
+
+El mayor desafío al trabajar con imágenes es la incertidumbre de estas características. Para el ojo humano, parece igual, sin embargo, cuando se convierte en datos, es posible que no encuentre fácilmente un patrón específico en estas imágenes.
+
+Es importante señalar que el análisis de imágenes es parte de un campo más amplio conocido como **procesamiento de imágenes**, donde el principal objetivo es mejorar la calidad visual de una imagen y/o extraer información o características útiles. El análisis se basa en diferentes propiedades de la imagen como el color, el brillo, la morfología de los objetos y la textura.
+
+## Introducción
+
+<div style="text-align: justify">
+
+De acuerdo con Prats-Montalba´n et al. 2011, las acciones de procesamiento de imágenes se pueden agrupar en tres subáreas:
+
++ **Compresión de imagen** Reduce los requisitos de memoria al eliminar la redundancia presente en la imagen, es decir, la información de la imagen que no es perceptible para el ojo humano.
+
+- **Preprocesamiento de imágenes** Consiste en mejorar la calidad visual de la imagen reduciendo el ruido, la calibración y estandarización de píxeles, mejorando la detección de bordes y haciendo que el análisis de la imagen sea más confiable en base a criterios objetivos y bien establecidos. El término preprocesamiento de imágenes, en general, se refiere a todas las manipulaciones en una imagen, cada una de las cuales produce una nueva imagen.
+
++ **Análisis de imágenes** Generalmente devuelve valores numéricos y / o información gráfica sobre las características de la imagen que son adecuadas para la clasificación, detección de defectos o predicción de algunas de las propiedades de calidad del objeto de la imagen. El término análisis de imágenes se utiliza cuando el resultado es un número o una decisión, no una imagen.
+
 <div>
 
 ##
@@ -99,6 +124,18 @@ En esta distribución posterior:
 
 <div>
 
+##
+### **Pasos para el procesamiento y análisis de imágenes**
+
+<div style="text-align: justify">
+
+La visión artificial generalmente consta de los siguientes cinco pasos u operaciones:
+
+<center>
+![](proceso.png "Red neuronal"){height=400px}
+
+<div>
+
 ## Aplicaciones
 
 <div style="text-align: justify">
@@ -109,6 +146,26 @@ En esta distribución posterior:
 
 <center>
 ![](medical.jpeg "Red neuronal"){height=200px}
+
+<div>
+
+## Ejemplo de aplicación
+
+<center>
+![](perro_gato.gif "Red neuronal"){width=500px}
+<div>
+
+## Conclusiones
+
+<div style="text-align: justify">
+
++ El campo del procesamiento y análisis de imágenes ha experimentado un crecimiento exponencial y su aplicación se ha generalizado cada vez más en los últimos años. 
+
+- El desarrollo de algoritmos nuevos y más eficaces para el procesamiento y análisis de imágenes, junto con los avances en la adquisición de imágenes, la computadora, el almacenamiento de datos e Internet, han hecho posible manejar un volumen cada vez mayor de datos de imágenes. 
+
++ El procesamiento de imágenes digitales se ha vuelto económico en muchos campos de investigación y en aplicaciones industriales. Si bien cada aplicación es diferente o única de las demás, a todas les preocupa la velocidad, la asequibilidad y el rendimiento o la precisión. 
+
+- Cada vez más actividades de investigación y aplicaciones en visión artificial se centran en operaciones interactivas y en tiempo real, donde la adquisición, el procesamiento, el análisis y la toma de decisiones de imágenes se realizan casi de forma simultánea o en paralelo.
 
 <div>
 
