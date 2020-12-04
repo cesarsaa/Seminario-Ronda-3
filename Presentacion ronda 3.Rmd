@@ -95,11 +95,17 @@ Donde la suma se toma sobre todos los pares $(i,j)$ de vecinos.
 <div style="text-align: justify">
 
 Es la generalización del modelo de Ising a los casos en que la imagen tiene más de dos colores. 
-$$n_{i,g}= \sum I_{xj}=g $$
-Donde la distribución satisface que:
+
+Si $n_{i,g}$ denota el número de vecinos de $i \in \imath$ con color g $(1\leq g \leq G)$, esto es:
+
+$$n_{i,g}= \sum_{j\sim i} I_{xj=g}$$
+La distribución condicional completa de $x_{i}$ se elige como:
+
+$$\pi(x_{i}=g|x_{-i})\varpropto exp(\beta n_{i,g})$$
+
+Esta elección corresponde a un modelo de probabilidad conjunta (verdadero), el modelo de Potts, cuya densidad viene dada por:
 
 $$\pi(x)\varpropto exp\left(\beta \sum_{j\sim i} I_{x_{j}=x_{i}}\right)$$
-
 
 <div>
 
@@ -177,7 +183,8 @@ suppressMessages(library(EBImage))
 suppressMessages(library(stringr))
 suppressMessages(library(pbapply))
 suppressMessages(library(magrittr))
-setwd("/Users/cesar.saavedra/Documents/GitHub/Seminario-Ronda-3/train")
+#setwd("/Users/cesar.saavedra/Documents/GitHub/Seminario-Ronda-3/train")
+setwd("C:/Users/Angie Rodríguez/Documents/GitHub/Seminario-Ronda-3/train")
 ```
 
 ## Ariel
