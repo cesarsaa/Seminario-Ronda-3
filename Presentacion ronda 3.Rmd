@@ -280,7 +280,7 @@ save(trainData, testData, file = "catdogData.RData")
 ```
 
 #Construcción del modelo
-##
+
 ```{r warning=FALSE, include=F, paged.print=F}
 # Fix structure for 2d CNN
 train_array <- t(trainData$X)
@@ -329,6 +329,7 @@ history <- model %>% fit(
 )
 ```
 
+##
 ```{r fig.height=4, fig.width=8, warning=FALSE, include=T, paged.print=FALSE}
 plot(history)
 ```
