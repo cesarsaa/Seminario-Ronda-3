@@ -104,7 +104,12 @@ Donde la suma se toma sobre todos los pares $(i,j)$ de vecinos.
 
 <div style="text-align: justify">
 
-$$n_{i,g}=$$
+Es la generalización del modelo de Ising a los casos en que la imagen tiene más de dos colores. 
+$$n_{i,g}= \sum I_{xj}=g $$
+Donde la distribución satisface que:
+
+$$\pi(x)\varpropto exp\left(\beta \sum_{j\sim i} I_{x_{j}=x_{i}}\right)$$
+
 
 <div>
 
