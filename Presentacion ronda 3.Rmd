@@ -22,7 +22,7 @@ Es importante señalar que el análisis de imágenes es parte de un campo más a
 
 <div style="text-align: justify">
 
-De acuerdo con Prats-Montalba´n et al. 2011, las acciones de procesamiento de imágenes se pueden agrupar en tres subáreas:
+Las acciones de procesamiento de imágenes se pueden agrupar en tres subáreas (Prats-Montalbán et al. 2011):
 
 + **Compresión de imagen** Reduce los requisitos de memoria al eliminar la redundancia presente en la imagen, es decir, la información de la imagen que no es perceptible para el ojo humano.
 
@@ -47,9 +47,9 @@ La razón de esta aparente paradoja es que, mientras que los píxeles suelen ser
 
 ## Rejillas y Lattices
 <div style="text-align: justify">
-Una imagen (en el sentido de una imagen generada por computadora) es un caso especial de una celosía, en el sentido de que es un objeto aleatorio cuyos elementos están indexados por la ubicación de los píxeles y, por lo tanto, están relacionados por la proximidad geográfica de esas ubicaciones. 
+Una imagen (en el sentido de una imagen generada por computadora) es un caso especial de un lattice, en el sentido de que es un objeto aleatorio cuyos elementos están indexados por la ubicación de los píxeles y, por lo tanto, están relacionados por la proximidad geográfica de esas ubicaciones. 
 
-En general, una celosía es un objeto matemático multidimensional en el que se puede definir una relación de vecindad.
+**Lattice:** Es un objeto matemático multidimensional en el que se puede definir una relación de vecindad. 
 
 <div>
 
@@ -124,7 +124,7 @@ En esta distribución posterior:
 
 <div style="text-align: justify">
 
-La visión artificial generalmente consta de los siguientes cinco pasos u operaciones:
+El procesamiento de imágenes implica una serie de 5 operaciones para mejorar la calidad de una imagen digital con el fin de eliminar defectos como distorsión geométrica, enfoque inadecuado, ruido repetitivo, iluminación no uniforme y movimiento de la cámara. Estas son:
 
 <center>
 ![](proceso.png "Red neuronal"){height=400px}
@@ -146,22 +146,27 @@ La visión artificial generalmente consta de los siguientes cinco pasos u operac
 
 ## Ejemplo de aplicación
 
+<div style="text-align: justify">
+
+A manera de ejemplo se construirá un clasificador binario que puede distinguir entre perros y gatos de un conjunto de $25.000$ imágenes, utilizando la interfaz Keras R  impulsada por el  motor de back-end TensorFlow.
+
 <center>
 ![](perro_gato.gif "Red neuronal"){width=500px}
 <div>
 
-## Ejemplo de aplicación
+## ¿Qué es CNN?
 
-### **¿Qué es CNN?**
+<div style="text-align: justify">
 
-La red neuronal convolucional (CNN) es una clase de redes neuronales de aprendizaje profundo. En resumen, piense en CNN como un algoritmo de aprendizaje automático que puede tomar una imagen de entrada, asignar importancia (pesos y sesgos aprendibles) a varios aspectos / objetos en la imagen y poder diferenciar uno del otro. CNN funciona extrayendo características de las imágenes. 
+El objetivo es experimentar con redes neuronales convolucionales (CNN) una forma de aprendizaje profundo. Las CNN son la base de los algoritmos de reconocimiento más avanzados utilizados por los principales gigantes tecnológicos. En resumen, se piensa en CNN como un algoritmo de aprendizaje automático que puede tomar una imagen de entrada, asignar importancia (pesos y sesgos aprendibles) a varios aspectos/objetos en la imagen y poder diferenciar uno del otro. CNN funciona extrayendo características de las imágenes. 
 
 Cualquier CNN consta de lo siguiente:
 
 1. La capa de entrada que es una imagen en escala de grises.
 2. La capa de salida, que es una etiqueta binaria o de varias clases.
-3. Capas ocultas que constan de capas de convolución, capas ReLU (unidad lineal rectificada), capas de agrupación y una red neuronal completamente conectada
+3. Capas ocultas que constan de capas de convolución, capas ReLU (unidad lineal rectificada), capas de agrupación y una red neuronal completamente conectada.
 
+<div>
 
 ## Conclusiones
 
@@ -186,6 +191,8 @@ Cualquier CNN consta de lo siguiente:
 - Marin, J. M., & Robert, C. P. (2014). Bayesian essentials with R (Vol. 48). New York: Springer.
 
 + Mendoza, F., & Lu, R. (2015). Basics of image analysis. In Hyperspectral imaging technology in food and agriculture (pp. 9-56). Springer, New York, NY.
+
+- Prats-Montalbán, J. M., De Juan, A., & Ferrer, A. (2011). Multivariate image analysis: a review with applications. Chemometrics and Intelligent Laboratory Systems, 107(1), 1-23.
 
 
 <div>
