@@ -51,6 +51,12 @@ Una imagen (en el sentido de una imagen generada por computadora) es un caso esp
 
 **Lattice:** Es un objeto matemático multidimensional en el que se puede definir una relación de vecindad. 
 
+<center>
+![](1.png "Red neuronal"){height=200px}
+<div style="text-align: justify">
+Las ubicaciones pertenecen a un conjunto discreto y son seleccionadas por el investigador.
+Ejemplos: tasas de mortalidad por departamentos, producción por área, colores de píxeles en interpretación de imágenes satélite.
+
 <div>
 
 ## Modelo de Ising
@@ -113,7 +119,7 @@ $$\pi(x)\varpropto exp\left(\beta \sum_{j\sim i} I_{x_{j}=x_{i}}\right)$$
 
 <div style="text-align: justify">
 
-Esta estructura subyacente de los píxeles "verdaderos" se denota por $x$, mientras que la imagen observada se denota por $y$. Ambos objetos $x$ e $y$ son matrices, con cada entrada de $x$ tomando un número finito de valores y cada entrada de $y$ tomando valores reales. Por lo tanto, estamos interesados en la distribución posterior de $x$ dada $y$ proporcionada por el teorema de Bayes:
+La estructura de los píxeles "verdaderos" se denota por $x$, mientras que la imagen observada se denota por $y$. Ambos objetos $x$ e $y$ son matrices, con cada entrada de $x$ tomando un número finito de valores y cada entrada de $y$ tomando valores reales. Por lo tanto, estamos interesados en la distribución posterior de $x$ dada $y$ proporcionada por el teorema de Bayes:
 
 $$\pi(x|y)\varpropto f(y|x)\pi(x)$$
 
@@ -138,26 +144,34 @@ El procesamiento de imágenes implica una serie de 5 operaciones para mejorar la
 <div>
 
 ## Aplicaciones
-
+<div class="columns-2">
 <div style="text-align: justify">
 
 + **Medicina**
-
-+ **Reconocimiento de imagenes satelitales**
-
 + **Seguridad**
-
++ **Reconocimiento de imagenes satelitales**
+<div>
 
 <center>
 ![](medical.jpeg "Red neuronal"){height=200px}
+<div>
 
+<center>
+![](fa.jpeg "Red neuronal"){height=200px}
+<div>
+
+<center>
+![](sa.jpg "Red neuronal"){height=200px}
+<div>
+
+<div class="columns-2">
 <div>
 
 ## Ejemplo de aplicación
 
 <div style="text-align: justify">
 
-A manera de ejemplo se construirá un clasificador binario que puede distinguir entre perros y gatos de un conjunto de $25.000$ imágenes, utilizando la interfaz Keras R  impulsada por el  motor de back-end TensorFlow.
+A manera de ejemplo se construirá un clasificador binario que puede distinguir entre perros y gatos de un conjunto de imágenes, utilizando la interfaz Keras R  impulsada por el  motor de back-end TensorFlow.
 
 <center>
 ![](perro_gato.gif "Red neuronal"){width=500px}
@@ -183,8 +197,8 @@ suppressMessages(library(EBImage))
 suppressMessages(library(stringr))
 suppressMessages(library(pbapply))
 suppressMessages(library(magrittr))
-#setwd("/Users/cesar.saavedra/Documents/GitHub/Seminario-Ronda-3/train")
-setwd("C:/Users/Angie Rodríguez/Documents/GitHub/Seminario-Ronda-3/train")
+setwd("/Users/cesar.saavedra/Documents/GitHub/Seminario-Ronda-3/train")
+#setwd("C:/Users/Angie Rodríguez/Documents/GitHub/Seminario-Ronda-3/train")
 ```
 
 ## Ariel
