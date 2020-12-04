@@ -14,17 +14,7 @@ output:
 <div style="text-align: justify">
 
 
-El análisis de imágenes es el proceso de segmentación de imágenes en diferentes categorías en función de su fe a ras. Una característica podría ser:
-
-+ Los bordes de una imagen
-
-- La intensidad de los píxeles
-
-+ El cambio en los valores de los píxeles
-
-- etc. 
-
-El mayor desafío al trabajar con imágenes es la incertidumbre de estas características. Para el ojo humano, parece igual, sin embargo, cuando se convierte en datos, es posible que no encuentre fácilmente un patrón específico en estas imágenes.
+El análisis de imágenes se utiliza como una herramienta fundamental para reconocer, diferenciar y cuantificar diversos tipos de imágenes, incluidas imágenes en escala de grises y en color, imágenes multiespectrales para unos pocos canales espectrales discretos o bandas de ondas (normalmente menos de 10) e imágenes hiperespectrales con una secuencia de bandas de ondas contiguas que cubren una región espectral específica (por ejemplo, visible e infrarrojo cercano).
 
 Es importante señalar que el análisis de imágenes es parte de un campo más amplio conocido como **procesamiento de imágenes**, donde el principal objetivo es mejorar la calidad visual de una imagen y/o extraer información o características útiles. El análisis se basa en diferentes propiedades de la imagen como el color, el brillo, la morfología de los objetos y la textura.
 
@@ -159,6 +149,19 @@ La visión artificial generalmente consta de los siguientes cinco pasos u operac
 <center>
 ![](perro_gato.gif "Red neuronal"){width=500px}
 <div>
+
+## Ejemplo de aplicación
+
+### **¿Qué es CNN?**
+
+La red neuronal convolucional (CNN) es una clase de redes neuronales de aprendizaje profundo. En resumen, piense en CNN como un algoritmo de aprendizaje automático que puede tomar una imagen de entrada, asignar importancia (pesos y sesgos aprendibles) a varios aspectos / objetos en la imagen y poder diferenciar uno del otro. CNN funciona extrayendo características de las imágenes. 
+
+Cualquier CNN consta de lo siguiente:
+
+1. La capa de entrada que es una imagen en escala de grises.
+2. La capa de salida, que es una etiqueta binaria o de varias clases.
+3. Capas ocultas que constan de capas de convolución, capas ReLU (unidad lineal rectificada), capas de agrupación y una red neuronal completamente conectada
+
 
 ## Conclusiones
 
