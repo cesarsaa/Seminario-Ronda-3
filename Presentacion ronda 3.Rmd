@@ -137,6 +137,9 @@ El procesamiento de imágenes implica una serie de 5 operaciones para mejorar la
 
 + **Medicina**
 
++ **Reconocimiento de imagenes satelitales**
+
++ **Seguridad**
 
 
 <center>
@@ -154,6 +157,19 @@ A manera de ejemplo se construirá un clasificador binario que puede distinguir 
 ![](perro_gato.gif "Red neuronal"){width=500px}
 <div>
 
+## ¿Qué es CNN?
+
+<div style="text-align: justify">
+
+El objetivo es experimentar con redes neuronales convolucionales (CNN) una forma de aprendizaje profundo. Las CNN son la base de los algoritmos de reconocimiento más avanzados utilizados por los principales gigantes tecnológicos. En resumen, se piensa en CNN como un algoritmo de aprendizaje automático que puede tomar una imagen de entrada, asignar importancia (pesos y sesgos aprendibles) a varios aspectos/objetos en la imagen y poder diferenciar uno del otro. CNN funciona extrayendo características de las imágenes. 
+
+Cualquier CNN consta de lo siguiente:
+
+1. La capa de entrada que es una imagen en escala de grises.
+2. La capa de salida, que es una etiqueta binaria o de varias clases.
+3. Capas ocultas que constan de capas de convolución, capas ReLU (unidad lineal rectificada), capas de agrupación y una red neuronal completamente conectada.
+
+<div>
 
 ```{r warning=FALSE, include=F, paged.print=F}
 suppressMessages(library(keras))
@@ -319,20 +335,6 @@ for(i in 1:length(random)){
   legend("topleft", legend = probs[i], bty = "n", col = "white")
 }
 ```
-
-## ¿Qué es CNN?
-
-<div style="text-align: justify">
-
-El objetivo es experimentar con redes neuronales convolucionales (CNN) una forma de aprendizaje profundo. Las CNN son la base de los algoritmos de reconocimiento más avanzados utilizados por los principales gigantes tecnológicos. En resumen, se piensa en CNN como un algoritmo de aprendizaje automático que puede tomar una imagen de entrada, asignar importancia (pesos y sesgos aprendibles) a varios aspectos/objetos en la imagen y poder diferenciar uno del otro. CNN funciona extrayendo características de las imágenes. 
-
-Cualquier CNN consta de lo siguiente:
-
-1. La capa de entrada que es una imagen en escala de grises.
-2. La capa de salida, que es una etiqueta binaria o de varias clases.
-3. Capas ocultas que constan de capas de convolución, capas ReLU (unidad lineal rectificada), capas de agrupación y una red neuronal completamente conectada.
-
-<div>
 
 ## Conclusiones
 
